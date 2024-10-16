@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class SearchController extends Controller
 {
-    /**
-     *
-     * */
 
     /**
      *  $_REQUEST['do'] == 'showresults'
@@ -46,9 +43,7 @@ class SearchController extends Controller
         /* Custom enum, wherelike, paginate */
         $response = VBPost::where('forumid', '!=', EnumForums::FIVE)->whereLike('text', $unit_text)->paginate();
         /* Либо можно в модели записать форумы по умолчанию -
-            protected $attributes = [
-                'forumid' => 1,
-            ];
+            protected $attributes = ['forumid' => 1];
         */
 
 
